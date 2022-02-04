@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-very-dark-blue: hsl(226, 43%, 10%);
+  --clr-dark-blue: hsl(235, 46%, 20%);
+  --clr-desaturated-blue: hsl(235, 45%, 61%);
+  --clr-pale-blue: hsl(236, 100%, 87%);
+  --clr-soft-orange: hsl(43, 84%, 65%);
+  --clr-soft-blue: hsl(195, 74%, 62%);
+  --clr-light-red: hsl(348, 100%, 68%);
+  --font: "Rubik", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  margin-top: 4rem;
+  background-color: #0f1424;
+  font-family: var(--font);
+}
+
+.container {
+  width: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: var(--clr-soft-orange);
+  max-width: 300px;
+  border-radius: 10px;
+  margin-bottom: 1em;
+}
+.card .card-top {
+  position: relative;
+  height: 2em;
+  z-index: 5;
+  border-radius: 10px;
+}
+.card .card-top img {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 40px;
+}
+.card .card-body {
+  background-color: var(--clr-dark-blue);
+  padding: 1rem 1.4rem;
+  position: relative;
+  z-index: 10;
+  border-radius: 10px;
+  width: 300px;
+}
+.card .card-body .card-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+}
+.card .card-body .card-text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+  color: var(--clr-pale-blue);
+}
+.card .card-body .card-text span {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.card.primary {
+  background-color: #5847eb;
+}
+.card.primary .card-header {
+  display: flex;
+  align-items: center;
+  padding: 1em;
+  border-radius: 10px;
+}
+.card.primary .card-header img {
+  display: block;
+  width: 50px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.card.primary .card-header .name-creator {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  color: #fff;
+}
+.card.primary .card-header .name-creator span {
+  font-size: 11px;
+  font-weight: 300;
+}
+.card.primary .card-bottom {
+  text-align: center;
+  margin: 1rem 0;
+  background-color: var(--clr-dark-blue);
+  padding: 1rem;
+  border-radius: 10px;
+}
+.card.primary .card-bottom ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: #6f76c8;
+}
+.card.primary .card-bottom ul li {
+  text-align: center;
+  cursor: pointer;
+}
+.card.primary .card-bottom ul li.active {
+  color: #fff;
+}
+
+.card.Play {
+  background-color: var(--clr-soft-blue);
+}
+
+.card.Study {
+  background-color: var(--clr-light-red);
+}
+
+.card.Exercise {
+  background-color: #4acf81;
+}
+
+.card.Social {
+  background-color: #7536d3;
+}
+
+@media only screen and (min-width: 768px) {
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr repeat(3, 1fr);
+    row-gap: 2em;
+    column-gap: 1em;
+  }
+
+  .card.primary {
+    grid-row: 1/3;
+    position: relative;
+    height: 100%;
+    padding: 1em;
+  }
+  .card.primary .card-header {
+    flex-direction: column;
+    align-items: start;
+    gap: 1em;
+  }
+  .card.primary .card-header .name-creator {
+    font-size: 35px;
+  }
+  .card.primary .card-bottom {
+    position: absolute;
+    width: 100%;
+    padding-top: 40px;
+    left: 0;
+    bottom: -30px;
+  }
+  .card.primary .card-bottom ul {
+    flex-direction: column;
+    align-items: start;
+    gap: 1.2em;
+  }
+
+  .card {
+    height: 180px;
+  }
+  .card .card-body {
+    height: 100%;
+    width: 100%;
+  }
+  .card .card-body .card-text {
+    flex-direction: column;
+    align-items: start;
+    gap: 1em;
+  }
+  .card .card-body .card-text span {
+    font-size: 50px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
